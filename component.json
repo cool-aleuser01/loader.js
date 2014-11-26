@@ -1,6 +1,7 @@
 {
 	"name": "loader",
-	"description": "MAGE page loader",
+	"repo": "mage/loader",
+	"description": "MAGE loader",
 	"version": "0.1.0",
 	"dependencies": {
 		"Wizcorp/cachepuncher": "0.1.2",
