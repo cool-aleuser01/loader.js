@@ -1,6 +1,6 @@
-# Loader
+# mage-loader.js
 
-The loader is a library for browsers to download packages of HTML, CSS and JavaScript from a MAGE
+`mage-loader` is a library for browsers to download packages of HTML, CSS and JavaScript from a MAGE
 server.
 
 
@@ -12,7 +12,7 @@ To use the loader, please add it to the component.json file of your application 
 {
 	"name": "myApp",
 	"dependencies": {
-		"mage/loader": "*"
+		"mage/loader.js": "*"
 	}
 }
 ```
@@ -20,7 +20,7 @@ To use the loader, please add it to the component.json file of your application 
 To import the loader in your app, simply require it.
 
 ```javascript
-var loader = require('loader');
+var loader = require('mage-loader.js');
 ```
 
 

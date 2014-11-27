@@ -1,8 +1,8 @@
 {
-	"name": "loader",
-	"repo": "mage/loader",
+	"name": "mage-loader.js",
+	"repo": "mage/loader.js",
 	"description": "MAGE loader",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"dependencies": {
 		"Wizcorp/cachepuncher": "0.1.2",
 		"component/emitter": "1.1.3",
