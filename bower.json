@@ -1,7 +1,7 @@
 {
   "name": "mage-loader.js",
   "main": "index.js",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "homepage": "https://github.com/mage/loader.js",
   "authors": [
     "Ron Korving <rkorving@wizcorp.jp>"
