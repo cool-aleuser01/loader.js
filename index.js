@@ -44,7 +44,7 @@ function Loader() {
 
 	// configuration
 
-	this.clientHostBaseUrl = '';
+	this.appUrl = '';
 	this.cors = null;
 	this.appName = null;
 	this.languages = [];
@@ -99,11 +99,12 @@ Loader.prototype._setConnectionState = function (state, error, packageName) {
  *
  * @param {Object}   cfg                          Configuration object
  * @param {string}   [cfg.appName]                The name of the MAGE application
- * @param {string}   [cfg.clientHostBaseUrl]      The base URL for the downloads
+ * @param {string}   [cfg.server.app]             Download information for the app
+ * @param {string}   [cfg.server.app.url]         The base URL for downloading this app's packages
+ * @param {Object}   [cfg.server.app.cors]        Cors configuration
  * @param {Object}   [cfg.appVariants]            Application variants
  * @param {string[]} [cfg.appVariants.languages]  Languages supported by this application
  * @param {number[]} [cfg.appVariants.densities]  Pixel densities supported by this application
- * @param {Object}   [cfg.cors]                   CORS configuration
  */
 
 Loader.prototype.configure = function (cfg) {
@@ -123,16 +124,16 @@ Loader.prototype.configure = function (cfg) {
 		this.appName = cfg.appName;
 	}
 
-	if (cfg.clientHostBaseUrl) {
-		if (typeof cfg.clientHostBaseUrl !== 'string') {
-			throw new TypeError('config.clientHostBaseUrl must be a string');
+	if (cfg.server && cfg.server.app) {
+		if (typeof cfg.server.app.url !== 'string') {
+			throw new TypeError('config.server.app.url must be a string');
 		}
 
-		this.clientHostBaseUrl = cfg.clientHostBaseUrl;
-	}
+		this.appUrl = cfg.server.app.url;
 
-	if (cfg.cors) {
-		this.cors = cfg.cors;
+		if (cfg.server.app.cors) {
+			this.cors = cfg.server.app.cors;
+		}
 	}
 
 	if (cfg.appVariants && cfg.appVariants.languages) {
@@ -290,7 +291,7 @@ Loader.prototype.getPackageUrl = function (pkgRequest, hash) {
 
 	params.push('rand=' + encodeURIComponent(cachepuncher.punch()));
 
-	return this.clientHostBaseUrl + '/app/' + pkgRequest.appName + '/' + pkgRequest.packageName + '?' + params.join('&');
+	return this.appUrl + '/' + pkgRequest.packageName + '?' + params.join('&');
 };
 
 

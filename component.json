@@ -2,7 +2,7 @@
 	"name": "mage-loader.js",
 	"repo": "mage/loader.js",
 	"description": "MAGE loader",
-	"version": "0.1.2",
+	"version": "0.2.0",
 	"dependencies": {
 		"Wizcorp/cachepuncher": "0.1.3",
 		"component/emitter": "1.1.3",
