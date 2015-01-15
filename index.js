@@ -1,6 +1,6 @@
 var cachepuncher = require('cachepuncher');
-var EventEmitter = require('emitter');
-var inherits = require('inherit');
+var EventEmitter = require('events');
+var inherits = require('util').inherits;
 
 var http = require('./http.js');
 

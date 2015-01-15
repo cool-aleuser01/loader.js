@@ -1,5 +1,5 @@
-var EventEmitter = require('emitter');
-var inherits = require('inherit');
+var EventEmitter = require('events');
+var inherits = require('util').inherits;
 var mime = require('./mime.js');
 var PackageRequest = require('./PackageRequest.js');
 
